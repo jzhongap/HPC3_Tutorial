@@ -3,7 +3,7 @@ HPC3 service a computing cluster is powered by ITSC, which provide a shared clus
 
 https://itsc.hkust.edu.hk/services/academic-teaching-support/high-performance-computing/hpc3-cluster
 
-## 1. Submit an application form on the ITSC platform
+## 1. Submit Application Form
 The application form can be found from the link below:
 
 https://hkust.service-now.com/itsc?id=sc_cat_item&sys_id=f299c0dedbb1d01058a29c18db961992
@@ -16,6 +16,10 @@ Password: password for your account
 
 ### 1.2 Fill in the Form
 ![alt text](image.png)
+
+
+You should provide your information and fill them into the application form
+
 ### 1.3 Submit and Wait:
 After submitting your application form, you need to wait for nearly one month for the application to be processed. 
 
@@ -56,6 +60,7 @@ If you see the line starting with a green `Username@LocalName`, it means you hav
 ## 3. Guides for HPC3
 ### 3.1 Logging in
 First, make sure you are using the network 'eduroam'  in HKUST which is the only network to provide HPC3 service. Then, launch your Ubuntu system and enter `ssh your_account@hpc3.ust.hk` and your password, select a way to verify your account. If the following welcome page is shown, you log in HPC3 successfully.
+![alt text](welcome.png)
 
 ### 3.2 Files Transfer
 #### 3.2.1 Download Certain Application
@@ -67,6 +72,8 @@ Launch your `FileZilla Client` and connect your HPC3 cluster with following cont
 Enter `your_account@hpc3.ust.hk` in Host, `your_account` in Username and your password in Password respectively, and press `Quick Connect`.
 
 Because you are required to verify your account through DUO Service every time you log in, so it may come up with some errors calling for `interactive` login option. Therefore, we should set it at: `File-Site Manager...-General` and change the `Logon type` to `interactive`, then you will successfully connect to your HPC3 cluster and transfer files after you pass the DUO verification process.
+![alt text](interactive.png)
+
 
 #### 3.2.3 Files Transfer
 After your successful connection, you can transfer files by simlpy dragging or double-click on the certain files.
@@ -164,7 +171,7 @@ python -m examples.dogbone.example
 #### 3.3.4 Check Jobs' Status and Queue
 There are some special commands for SLURM system, some common commands are listed as follows:
 
-`sinfo` -- show 
+`sinfo` -- show all current available nodes
 
 
 `squeue` -- show all users' status of jobs in the overall HPC3 system
@@ -177,6 +184,7 @@ There are some special commands for SLURM system, some common commands are liste
 
 
 Also, keep in mind that, the resources allocated to each PI group are limited, every group can at most use 6 cpu-share nodes, 2 gpu-share nodes and 2 himen-share nodes at the same time, and for each job, it is set globally that, the walltime is 1 day (24 hours), any jobs exceed 24 hours will be killed no matter it is finished or not, so please be very careful about it. In addition, there is priority problems when there are too many jobs running at the same time, so there is probability that your job is suspended and others' jobs are running advanced.
+![alt text](intro.png)
 
 ## 4. Reference
 For further information, you can refer to the ITSC websites:
