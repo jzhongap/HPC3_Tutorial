@@ -1,4 +1,6 @@
 # Guides for HKUST HPC3 Cluster
+### Author: Jiawei Zhong
+### Date: 6/27/2024
 HPC3 service a computing cluster is powered by ITSC, which provide a shared cluster that allow research groups to do complicated computing tasks. It is the latest version of HKUST HPC series, and provides cpu and gpu nodes to give a better working efficiency. HPC3 is short for High-Performance Computing, the detailed introduction of HPC3 can be found from:
 
 https://itsc.hkust.edu.hk/services/academic-teaching-support/high-performance-computing/hpc3-cluster
@@ -102,7 +104,7 @@ To run your python files properly, you should set up your environment and instal
 `conda activate your_env` -- activate your environment
 
 
-`conda deactivate your_env` -- deactivate your environment
+`conda deactivate` -- deactivate your environment
 
 
 `conda install package_name` -- general command for installing packages
@@ -131,7 +133,7 @@ Finally, transfer the .sh file to HPC3 platform, and run it by command `sbatch y
 A template of script is shown as follow:
 
 
-```
+```bash
 #!/bin/bash
 
 # NOTE: Lines starting with "#SBATCH" are valid SLURM commands or statements,
@@ -162,10 +164,12 @@ A template of script is shown as follow:
 module swap gnu8 intel
 
 # Go to the job submission directory and run your application
+
 cd $HOME/apps/slurm
 mpirun ./your_mpi_application
 
 python -m examples.dogbone.example
+
 ```
 
 #### 3.3.4 Check Jobs' Status and Queue
